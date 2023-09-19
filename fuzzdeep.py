@@ -91,7 +91,7 @@ def wordlist(target, wordlist_file_name, sleep, device, package):
     wordlist_file = open(wordlist_file_name, 'r')
 
     for word in wordlist_file:
-        test_url = target.replace("FUZZ", word)
+        test_url = target.replace("FUZZ", word.strip())
         
         # Send payload
         send_payload(test_url, sleep, package, device)
