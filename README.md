@@ -88,6 +88,4 @@ python fuzzdeep.py -f "value" -t "scheme://host?q=FUZZ" -p "package.name"
 The following are on the TODO list:
 * Broaden support for Intents beyond deep links.
 * Implement better tooling to support identifying interesting outcomes/conditions.
-* Add timestamp
-
 
