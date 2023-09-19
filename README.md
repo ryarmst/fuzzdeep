@@ -8,6 +8,8 @@ FuzzDeep is a Python tool for fuzzing Android application deep link handling to 
 
 This tool was created to ease the challenge in automating attacks against link handling logic in Android applications. It is not a replacement for static review/analysis but may help identify issues where analysis is complicated by obfuscation or other challenges. The tool was partially inspired by [deeplink-fuzz.sh](https://github.com/B3nac/deeplink-fuzz.sh) which uses Radamsa to fuzz link handlers, but the tool did not have the required flexibility. The tool was also inspired by similar HTTP fuzzing tools as can be seen in its payload positioning implementation.
 
+This tool is called `FuzzDeep` because the mucher better sounding `DeepFuzz` was taken.
+
 ## Setup
 
 The recommended setup approach to download the repo and instantiate a Python virtual environment. Note that Python 3 (required) is aliased `python3` in some environments. 
