@@ -48,13 +48,13 @@ def connect_device(signer):
     return device
 
 def send_payload(payload, sleep, package, device):
-    activity_manager_call = 'am start -a android.intent.action.VIEW -d PAYLOAD'
+    activity_manager_call = "am start -a android.intent.action.VIEW -d 'PAYLOAD'" # Added single quotes around payload
     
     # Payload filtering/encoding
     payload = payload.replace(" ", "%20") # Replace spaces with %20
         
     device.shell(activity_manager_call.replace("PAYLOAD", payload))
-    print(str(datetime.datetime.now()) + '  Trying payload: ' + payload)
+    print(str(datetime.datetime.now()) + '  Trying payload: ' + payload, end='')
     print('Waiting for: ' + str(sleep))
     time.sleep(sleep)
     # Close the activity
