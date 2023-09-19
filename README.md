@@ -48,6 +48,11 @@ python -m pip install -r requirements.txt
 * Pyradamsa
 * adb_shell
 
+### ADB Connection
+The tool assumes an ADB connection via USB in a Linux environment. You may have to modify code for a different configuration. When connecting a system to a device with ADB, keys are created when systems are authorized by devices. These are stored in `$HOME/.android/` by default on Linux, which the tool assume (this can be changed with the `-k` option).
+
+See [Android ADB Key Management](https://technicallycompetent.com/android-adb-keys/) for more information on ADB key management. This tool relies on the Python ADB implementation [adb_shell](https://github.com/JeffLIrion/adb_shell).
+
 ## Usage
 
 The tool is easy to use, but effective usage is non-trivial. The difficulty is in identifying application behavior that indicates a bug or potential vulnerability. Consider the fuzzing of HTTP services for comparison. When fuzzing web services, the HTTP response from the server can be used for comparison to a baseline to identify whether each payload caused a difference in application behavior. With Android deep links, we don't necessarily expect an output. So what should be monitored to identify an event worth investigating? 
