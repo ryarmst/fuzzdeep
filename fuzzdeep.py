@@ -6,25 +6,15 @@ import os
 import sys
 import argparse
 import time
+import datetime
 
 import pyradamsa
 from adb_shell.adb_device import AdbDeviceTcp, AdbDeviceUsb
 from adb_shell.auth.sign_pythonrsa import PythonRSASigner
 from adb_shell.auth.keygen import keygen
 
-# Globals
-private_key = ''
-public_key = ''
-
 # Load the appropriate keys to connect to the target device with adb.
 def load_keys(adb_key_location):
-    # Force use of globals
-    global adb_key_location_linux_default
-    global adb_key_location
-    global private_key
-    global public_key
-    global signer
-
     home_dir = os.getenv("HOME")
     adb_key_location = adb_key_location.replace("HOME", home_dir)
     
@@ -61,10 +51,10 @@ def send_payload(payload, sleep, package, device):
     activity_manager_call = 'am start -a android.intent.action.VIEW -d PAYLOAD'
     
     # Payload filtering/encoding
-    payload = payload.replace(' ', '%20') # Replace spaces with %20
+    payload = payload.replace(" ", "%20") # Replace spaces with %20
         
     device.shell(activity_manager_call.replace("PAYLOAD", payload))
-    print(time.time() + '  Trying payload: ' + payload)
+    print(str(datetime.datetime.now()) + '  Trying payload: ' + payload)
     print('Waiting for: ' + str(sleep))
     time.sleep(sleep)
     # Close the activity
@@ -125,7 +115,7 @@ def main(arguments):
     args = parser.parse_args(arguments)
     
     # Prepare adb connection
-    signer = load_keys()
+    signer = load_keys(args.keys)
     device = connect_device(signer)    
     
     ## Wordlist attack
