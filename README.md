@@ -18,9 +18,14 @@ python -m pip install --user virtualenv
 ```
 
 Clone the repo 
+```
+git clone https://github.com/ryarmst/fuzzdeep.git
+```
 
 Navigate into the repo
-
+```
+cd fuzzdeep
+```
 Create Project Directory and navigate to it
 ```
 python -m venv env
