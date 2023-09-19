@@ -49,7 +49,7 @@ python -m pip install -r requirements.txt
 * adb_shell
 
 ### ADB Connection
-The tool assumes an ADB connection via USB in a Linux environment. You may have to modify code for a different configuration. When connecting a system to a device with ADB, keys are created when systems are authorized by devices. These are stored in `$HOME/.android/` by default on Linux, which the tool assume (this can be changed with the `-k` option).
+The tool assumes an ADB connection via USB in a Linux environment. You may have to modify code for a different configuration. When connecting a system to a device with ADB, keys are created when systems are authorized by devices. These are stored in `$HOME/.android/` by default on Linux, which the tool assume (this can be changed with the `-k` option). If you have previously used ADB, keys should exist and work with the tool by default. 
 
 See [Android ADB Key Management](https://technicallycompetent.com/android-adb-keys/) for more information on ADB key management. This tool relies on the Python ADB implementation [adb_shell](https://github.com/JeffLIrion/adb_shell).
 
