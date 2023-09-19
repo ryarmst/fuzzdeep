@@ -38,7 +38,7 @@ source env/bin/activate
 
 Install the requirements
 ```
-python -m pip install requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### Requirements
