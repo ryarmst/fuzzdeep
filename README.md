@@ -93,6 +93,7 @@ python fuzzdeep.py -f "value" -t "scheme://host?q=FUZZ" -p "package.name"
 
 ## Future Work
 The following are on the TODO list:
+* Build option to use system adb instead of adb_shell
 * Broaden support for Intents beyond deep links.
 * Implement better tooling to support identifying interesting outcomes/conditions.
 
